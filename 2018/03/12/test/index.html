@@ -8,17 +8,12 @@
 
   <!-- Title -->
   
-  <title>在Python中將座位表分組 - 2018CD_group3</title>
+  <title>Testing - 2018CD_group3</title>
 
   <!--Favicon-->
   <link rel="icon" href="favicon/favicon.ico">
 
   <!--Description-->
-  
-      <meta name="description" content="※第一週在進行分組並實際換好座位後，我們將座位填上線上表格Ethercalc中，並擷取後利用Python進行分組練習，規則為一組三人，共會分成14組。 
-1.分組排列程式展示：
-with open(&amp;quot;2a raw.txt&amp;quot;) as fh:
-    rea = fh.readlin">
   
 
   <!--Author-->
@@ -84,48 +79,13 @@ with open(&amp;quot;2a raw.txt&amp;quot;) as fh:
 
   		<div class="row">
   			<div class="col-12 mb-4">
-  <img class="img-fluid project-img" src="/cd2018/images/unsplash.jpg" alt="在Python中將座位表分組">
+  <img class="img-fluid project-img" src="/cd2018/images/unsplash.jpg" alt="Testing">
 </div>
 <div class="col-lg-4 col-12 pt-3 px-4 pr-lg-5">
-  <h1>在Python中將座位表分組</h1>
+  <h1>Testing</h1>
 </div>
 <div class="col-lg-8 col-12 pt-lg-3 mb-4 pl-lg-5 px-lg-0 px-4 portfolio-content">
-  <p>※第一週在進行分組並實際換好座位後，我們將座位填上線上表格<a href="https://ethercalc.org" target="_blank" rel="noopener">Ethercalc</a>中，並擷取後利用Python進行分組練習，規則為一組三人，共會分成14組。 </p>
-<p>1.分組排列程式展示：</p>
-<pre><code>with open(&quot;2a raw.txt&quot;) as fh:
-    rea = fh.readlines()
-    #print (rea)
-
-no_list = lambda list: int((sum([(len(list[i])) for i in range(len(list))]))/3)
-#簡寫一個for迴圈命名為no_list,目的為求出迴圈執行次數(14次)
-
-t = list()#命名空清單t
-for k in range(len(rea)):
-    a = rea[k]
-    b = a.split()#分割每一行第k位
-    #print(b)
-    for i in range(0,len(b),3):
-        c = b[i:i+3]#每三字串為一次進行迴圈
-        t.append(c)#加入清單t
-
-for g in range(no_list(t)):#range = 14
-    print(&quot;第&quot; + str(g+1) + &quot;組:&quot; + str(t[g]))
-</code></pre><p>2.輸出的結果：</p>
-<pre><code>第1組:[&apos;40523115&apos;, &apos;40523108&apos;, &apos;40523116&apos;]
-第2組:[&apos;40523144&apos;, &apos;40523111&apos;, &apos;40523141&apos;]
-第3組:[&apos;40523104&apos;, &apos;40523102&apos;, &apos;40523123&apos;]
-第4組:[&apos;40523137&apos;, &apos;40523117&apos;, &apos;40523135&apos;]
-第5組:[&apos;40523147&apos;, &apos;40523146&apos;, &apos;40523145&apos;]
-第6組:[&apos;40523122&apos;, &apos;40523136&apos;, &apos;40523132&apos;]
-第7組:[&apos;40523127&apos;, &apos;40523126&apos;, &apos;40523125&apos;]
-第8組:[&apos;40523124&apos;, &apos;40523118&apos;, &apos;40523131&apos;]
-第9組:[&apos;40523121&apos;, &apos;40523120&apos;, &apos;40523119&apos;]
-第10組:[&apos;40523105&apos;, &apos;40523106&apos;, &apos;40523107&apos;]
-第11組:[&apos;40523143&apos;, &apos;40523128&apos;, &apos;40523129&apos;]
-第12組:[&apos;40523130&apos;, &apos;40523139&apos;, &apos;40523133&apos;]
-第13組:[&apos;40523142&apos;, &apos;40523148&apos;, &apos;40523140&apos;]
-第14組:[&apos;40523113&apos;, &apos;40523138&apos;, &apos;40523134&apos;]
-</code></pre>
+  
 </div>
 
 

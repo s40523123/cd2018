@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="">
+<html class="theme-next mist use-motion" lang="en">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -98,6 +98,7 @@
 <meta property="og:title" content="2018CD_group3">
 <meta property="og:url" content="https://s40523123.github.io/cd2018/index.html">
 <meta property="og:site_name" content="2018CD_group3">
+<meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2018CD_group3">
 
@@ -152,7 +153,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
   
   
@@ -259,7 +260,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://s40523123.github.io/cd2018/cd2018/2018/03/12/test/">
+    <link itemprop="mainEntityOfPage" href="https://s40523123.github.io/cd2018/cd2018/2018/03/13/group3-W2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="cd_group3">
@@ -278,7 +279,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/cd2018/2018/03/12/test/" itemprop="url">Testing</a></h1>
+                <a class="post-title-link" href="/cd2018/2018/03/13/group3-W2/" itemprop="url">在瀏覽器中利用Bython執行Python</a></h1>
         
 
         <div class="post-meta">
@@ -290,8 +291,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-12T20:42:27+08:00">
-                2018-03-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-13T16:40:31+08:00">
+                2018-03-13
               </time>
             
 
@@ -330,7 +331,38 @@
       
         
           
-            
+            <p>問題排除中</p>
+<script type="text/javascript" src="https://cdn.rawgit.com/brython-dev/brython/3.4.0/www/src/brython.js"></script>
+
+<body onload="brython()"><br>    <div class="paginator"><br>        <script type="text/python">
+
+            from browser import document,html
+            import re, time
+
+            # 按下按鈕執行以下程式
+
+            @document["mybutton"].bind("click")
+            def echo(ev):
+                fake_qs = '?foo=%s' %time.time()
+
+                with open('./../../../../2a%20raw.txt'+fake_qs) as fh:
+                    data = [(re.findall('405\d\d\d\d\d', data[int(i)])) for i in range(len(data))]
+                num = 0
+                for i in range(len(data)):
+                    team = data[i]
+                    for g in range(len(team)):
+                        if g%3 == 0:
+                            num += 1
+                            document['zone'] <= ('第' + str(num) +'組:' + str(team[g:g+3]) + html.BR())
+
+
+            @document["mybutton2"].bind("click")
+            def delete(ev):
+                for row in document['zone']:
+                    row.remove()
+        </script><br>        <button id="mybutton" class="next">執行</button><button id="mybutton2" class="next">清除</button><br>    </div><br></body>
+
+<div id="zone"><br></div>
           
         
       
@@ -448,154 +480,14 @@
 
       
         
-          
-            <p>※第一週在進行分組並實際換好座位後，我們將座位填上線上表格<a href="https://ethercalc.org" target="_blank" rel="noopener">Ethercalc</a>中，並擷取後利用Python進行分組練習，規則為一組三人，共會分成14組。 </p>
-<p>1.分組排列程式展示：<br>    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">"2a raw.txt"</span>) <span class="keyword">as</span> fh:</span><br><span class="line">    rea = fh.readlines()</span><br><span class="line">    <span class="comment">#print (rea)</span></span><br><span class="line"></span><br><span class="line">no_list = <span class="keyword">lambda</span> list: int((sum([(len(list[i])) <span class="keyword">for</span> i <span class="keyword">in</span> range(len(list))]))/<span class="number">3</span>)</span><br><span class="line"><span class="comment">#簡寫一個for迴圈命名為no_list,目的為求出迴圈執行次數(14次)</span></span><br><span class="line"></span><br><span class="line">t = list()<span class="comment">#命名空清單t</span></span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> range(len(rea)):</span><br><span class="line">    a = rea[k]</span><br><span class="line">    b = a.split()<span class="comment">#分割每一行第k位</span></span><br><span class="line">    <span class="comment">#print(b)</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,len(b),<span class="number">3</span>):</span><br><span class="line">        c = b[i:i+<span class="number">3</span>]<span class="comment">#每三字串為一次進行迴圈</span></span><br><span class="line">        t.append(c)<span class="comment">#加入清單t</span></span><br><span class="line">        </span><br><span class="line"><span class="keyword">for</span> g <span class="keyword">in</span> range(no_list(t)):<span class="comment">#range = 14</span></span><br><span class="line">    print(<span class="string">"第"</span> + str(g+<span class="number">1</span>) + <span class="string">"組:"</span> + str(t[g]))</span><br></pre></td></tr></table></figure></p>
-<p>2.輸出的結果：</p>
-<pre><code>第1組:[&apos;40523115&apos;, &apos;40523108&apos;, &apos;40523116&apos;]
-第2組:[&apos;40523144&apos;, &apos;40523111&apos;, &apos;40523141&apos;]
-第3組:[&apos;40523104&apos;, &apos;40523102&apos;, &apos;40523123&apos;]
-第4組:[&apos;40523137&apos;, &apos;40523117&apos;, &apos;40523135&apos;]
-第5組:[&apos;40523147&apos;, &apos;40523146&apos;, &apos;40523145&apos;]
-第6組:[&apos;40523122&apos;, &apos;40523136&apos;, &apos;40523132&apos;]
-第7組:[&apos;40523127&apos;, &apos;40523126&apos;, &apos;40523125&apos;]
-第8組:[&apos;40523124&apos;, &apos;40523118&apos;, &apos;40523131&apos;]
-第9組:[&apos;40523121&apos;, &apos;40523120&apos;, &apos;40523119&apos;]
-第10組:[&apos;40523105&apos;, &apos;40523106&apos;, &apos;40523107&apos;]
-第11組:[&apos;40523143&apos;, &apos;40523128&apos;, &apos;40523129&apos;]
-第12組:[&apos;40523130&apos;, &apos;40523139&apos;, &apos;40523133&apos;]
-第13組:[&apos;40523142&apos;, &apos;40523148&apos;, &apos;40523140&apos;]
-第14組:[&apos;40523113&apos;, &apos;40523138&apos;, &apos;40523134&apos;]
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://s40523123.github.io/cd2018/cd2018/2018/03/08/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="cd_group3">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/cd2018/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="2018CD_group3">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/cd2018/2018/03/08/hello-world/" itemprop="url">Tips</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-08T13:45:08+08:00">
-                2018-03-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
+          <p>※第一週在進行分組並實際換好座位後，我們將座位填上線上表格<a href="https://ethercalc.org" target="_blank" rel="noopener">Ethercalc</a>中，並擷取後利用Python進行分組練習，規則為一組三人，共會分成14組。 </p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/cd2018/2018/03/08/group3-W1/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -675,7 +567,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/cd2018/archives/">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

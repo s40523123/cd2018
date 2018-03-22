@@ -260,6 +260,130 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://s40523123.github.io/cd2018/cd2018/2018/03/22/group3-W4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="cd_group3">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/cd2018/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="2018CD_group3">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/cd2018/2018/03/22/group3-W4/" itemprop="url">Brython的學習簡介</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-22T16:02:02+08:00">
+                2018-03-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>※將<a href="https://www.brython.info/static_doc/en/intro.html" target="_blank" rel="noopener">Brython</a>官方網站中所提到的部分操作學習後，在此做簡單介紹。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/cd2018/2018/03/22/group3-W4/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://s40523123.github.io/cd2018/cd2018/2018/03/13/group3-W2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -279,7 +403,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/cd2018/2018/03/13/group3-W2/" itemprop="url">在瀏覽器中利用Bython執行Python</a></h1>
+                <a class="post-title-link" href="/cd2018/2018/03/13/group3-W2/" itemprop="url">在瀏覽器中利用Brython執行Python</a></h1>
         
 
         <div class="post-meta">
@@ -330,40 +454,14 @@
 
       
         
-          
-            <p>問題排除中</p>
-<script type="text/javascript" src="https://cdn.rawgit.com/brython-dev/brython/3.4.0/www/src/brython.js"></script>
-
-<body onload="brython()"><br>    <div class="paginator"><br>        <script type="text/python">
-
-            from browser import document,html
-            import re, time
-
-            # 按下按鈕執行以下程式
-
-            @document["mybutton"].bind("click")
-            def echo(ev):
-                fake_qs = '?foo=%s' %time.time()
-
-                with open('./../../../../2a%20raw.txt'+fake_qs) as fh:
-                    data = [(re.findall('405\d\d\d\d\d', data[int(i)])) for i in range(len(data))]
-                num = 0
-                for i in range(len(data)):
-                    team = data[i]
-                    for g in range(len(team)):
-                        if g%3 == 0:
-                            num += 1
-                            document['zone'] <= ('第' + str(num) +'組:' + str(team[g:g+3]) + html.BR())
-
-
-            @document["mybutton2"].bind("click")
-            def delete(ev):
-                for row in document['zone']:
-                    row.remove()
-        </script><br>        <button id="mybutton" class="next">執行</button><button id="mybutton2" class="next">清除</button><br>    </div><br></body>
-
-<div id="zone"><br></div>
-          
+          <p>本篇在學習<a href="https://www.brython.info/static_doc/en/intro.html" target="_blank" rel="noopener">Brython</a>的大致使用後，進行實際執行，以下為例：</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/cd2018/2018/03/13/group3-W2/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -567,7 +665,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/cd2018/archives/">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -580,7 +678,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">tags</span>
               
             </div>

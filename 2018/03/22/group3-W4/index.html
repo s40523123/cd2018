@@ -78,7 +78,7 @@
 <link href="/cd2018/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="group3_w4," />
 
 
 
@@ -94,13 +94,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="2018CD_group3">
-<meta property="og:url" content="https://s40523123.github.io/cd2018/tags/group3-w1/index.html">
+<meta name="description" content="※將Brython官方網站中所提到的部分操作學習後，在此做簡單介紹。">
+<meta name="keywords" content="group3_w4">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Brython的學習簡介">
+<meta property="og:url" content="https://s40523123.github.io/cd2018/2018/03/22/group3-W4/index.html">
 <meta property="og:site_name" content="2018CD_group3">
+<meta property="og:description" content="※將Brython官方網站中所提到的部分操作學習後，在此做簡單介紹。">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-03-22T11:45:36.721Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2018CD_group3">
+<meta name="twitter:title" content="Brython的學習簡介">
+<meta name="twitter:description" content="※將Brython官方網站中所提到的部分操作學習後，在此做簡單介紹。">
 
 
 
@@ -129,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="https://s40523123.github.io/cd2018/tags/group3-w1/"/>
+  <link rel="canonical" href="https://s40523123.github.io/cd2018/2018/03/22/group3-W4/"/>
 
 
 
 
 
-  <title>Tag: group3_w1 | 2018CD_group3</title>
+  <title>Brython的學習簡介 | 2018CD_group3</title>
   
 
 
@@ -160,7 +165,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -244,82 +249,165 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>group3_w1<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://s40523123.github.io/cd2018/cd2018/2018/03/22/group3-W4/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="cd_group3">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/cd2018/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="2018CD_group3">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/cd2018/2018/03/13/group3-W2/" itemprop="url">
-              
-                <span itemprop="name">在瀏覽器中利用Brython執行Python</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Brython的學習簡介</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-13T16:40:31+08:00"
-              content="2018-03-13" >
-          03-13
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-22T16:02:02+08:00">
+                2018-03-22
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>※將<a href="https://www.brython.info/static_doc/en/intro.html" target="_blank" rel="noopener">Brython</a>官方網站中所提到的部分操作學習後，在此做簡單介紹。</p>
+<a id="more"></a>
+<p>1.Introduction<br>由<a href="https://www.w3.org/DOM/" target="_blank" rel="noopener">W3C Document Object Model specification</a>文章中寫到：<br>何謂DOM(Document Object Model)?<br>DOM是一個平台、連接口，它能允許程式或腳本做出動態存取，或更新訊息，以及構成文件的各種樣式。<br>而Brython所要做到的即是將Javascript替換，以Python在瀏覽器中執行腳本。</p>
+<p>以下例子：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;body onload=<span class="string">"brython()"</span>&gt;</span><br><span class="line">&lt;script type="text/javascript" src="https://cdn.rawgit.com/brython-dev/brython/3.4.0/www/src/brython.js"&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src="/brython.js"&gt;&lt;/script&gt;</span><br><span class="line">&lt;div =<span class="string">"zone"</span>&gt;</span><br><span class="line">&lt;script type=<span class="string">"text/python"</span>&gt;&#123;% raw %&#125;</span><br><span class="line"><span class="keyword">from</span> browser <span class="keyword">import</span> document, alert</span><br><span class="line"></span><br><span class="line"><span class="comment"># bind event 'click' on button to function echo</span></span><br><span class="line"><span class="meta">@document["mybutton"].bind("click")</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">echo</span><span class="params">(ev)</span>:</span></span><br><span class="line">    alert(document[<span class="string">"zone"</span>].value)</span><br><span class="line"></span><br><span class="line">&#123;% endraw %&#125;&lt;/script&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;input id=<span class="string">"zone"</span>&gt;</span><br><span class="line">&lt;button id="mybutton"&gt;click !&lt;/button&gt;</span><br></pre></td></tr></table></figure></p>
+<p>實際執行，輸入訊息後跳出警告：</p>
+<p><body onload="brython()"></body></p>
+<p><script type="text/javascript" src="https://cdn.rawgit.com/brython-dev/brython/3.4.0/www/src/brython.js"></script></p>
+<p><script src="/brython.js"></script></p>
+<p><div ="zone"=""></div></p>
+<p><script type="text/python">
+from browser import document, alert
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/cd2018/2018/03/08/group3-W1/" itemprop="url">
-              
-                <span itemprop="name">在Python中將座位表分組</span>
-              
-            </a>
-        
-      </h2>
+# bind event 'click' on button to function echo
+@document["mybutton"].bind("click")
+def echo(ev):
+    alert(document["zone"].value)
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-08T13:57:35+08:00"
-              content="2018-03-08" >
-          03-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+</script><br><br></p>
+<p><input id="zone"></p>
+<button id="mybutton">click !</button>
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/cd2018/tags/group3-w4/" rel="tag"># group3_w4</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/cd2018/2018/03/13/group3-W2/" rel="next" title="在瀏覽器中利用Brython執行Python">
+                <i class="fa fa-chevron-left"></i> 在瀏覽器中利用Brython執行Python
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -327,6 +415,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -514,10 +606,10 @@
   
 
   
-    <script type="text/javascript" src="/cd2018/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/cd2018/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/cd2018/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 

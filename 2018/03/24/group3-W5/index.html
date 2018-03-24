@@ -78,7 +78,7 @@
 <link href="/cd2018/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="group3_w4," />
 
 
 
@@ -94,13 +94,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="2018CD_group3">
-<meta property="og:url" content="https://s40523123.github.io/cd2018/tags/group3-w1/index.html">
+<meta name="description" content="在先前的文章經過教學後，於此處實際執行。">
+<meta name="keywords" content="group3_w4">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Brython分組程式執行">
+<meta property="og:url" content="https://s40523123.github.io/cd2018/2018/03/24/group3-W5/index.html">
 <meta property="og:site_name" content="2018CD_group3">
+<meta property="og:description" content="在先前的文章經過教學後，於此處實際執行。">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-03-24T08:47:36.406Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2018CD_group3">
+<meta name="twitter:title" content="Brython分組程式執行">
+<meta name="twitter:description" content="在先前的文章經過教學後，於此處實際執行。">
 
 
 
@@ -129,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="https://s40523123.github.io/cd2018/tags/group3-w1/"/>
+  <link rel="canonical" href="https://s40523123.github.io/cd2018/2018/03/24/group3-W5/"/>
 
 
 
 
 
-  <title>Tag: group3_w1 | 2018CD_group3</title>
+  <title>Brython分組程式執行 | 2018CD_group3</title>
   
 
 
@@ -160,7 +165,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -264,54 +269,180 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>group3_w1<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://s40523123.github.io/cd2018/cd2018/2018/03/24/group3-W5/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="cd_group3">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/cd2018/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="2018CD_group3">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/cd2018/2018/03/08/group3-W1/" itemprop="url">
-              
-                <span itemprop="name">在Python中將座位表分組</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Brython分組程式執行</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-08T13:57:35+08:00"
-              content="2018-03-08" >
-          03-08
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-24T16:47:33+08:00">
+                2018-03-24
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在先前的文章經過教學後，於此處實際執行。</p>
+<a id="more"></a>
+<script type="text/javascript" src="https://cdn.rawgit.com/brython-dev/brython/3.4.0/www/src/brython.js"></script>
+
+<body onload="brython()"><br>    <div id="one"><br>        <script type="text/python">
+            from browser import document, html
+            import time
+
+            @document["mybutton"].bind("click")
+            def echo(ev):
+                fake_qs = '?foo=%s' %time.time()
+                with open("./../../../../2a.txt"+fake_qs) as fh:
+                    rea = fh.readlines()
+                    #print (rea)
+
+                no_list = lambda list: int((sum([(len(list[i])) for i in range(len(list))]))/3)
+                #簡寫一個for迴圈命名為no_list,目的為求出迴圈執行次數(14次)
+
+                t = list()#命名空清單t
+                for k in range(len(rea)):
+                    a = rea[k]
+                    b = a.split()#分割每一行第k位
+                    #print(b)
+                    for i in range(0,len(b),3):
+                        c = b[i:i+3]#每三字串為一次進行迴圈
+                        t.append(c)#加入清單t
+                        
+                for g in range(no_list(t)):#range = 14
+                    document["one"] <= ("第" + str(g+1) + "組:" + str(t[g])) + html.BR()
+            @document["mybutton2"].bind("click")
+            def delete(ev):
+                for row in document['one']:
+                    row.remove()
+</script><br>    </div><br><button id="mybutton">執行</button><button id="mybutton2">清除</button><br></body>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/cd2018/tags/group3-w4/" rel="tag"># group3_w4</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/cd2018/2018/03/22/group3-W4/" rel="next" title="Brython的學習簡介">
+                <i class="fa fa-chevron-left"></i> Brython的學習簡介
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -319,6 +450,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -520,10 +655,10 @@
   
 
   
-    <script type="text/javascript" src="/cd2018/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/cd2018/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/cd2018/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 

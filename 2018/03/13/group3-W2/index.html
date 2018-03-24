@@ -78,7 +78,7 @@
 <link href="/cd2018/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="group3_w1," />
+  <meta name="keywords" content="group3_w2," />
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="本篇在學習Brython的大致使用後，進行實際執行，以下為例：">
-<meta name="keywords" content="group3_w1">
+<meta name="description" content="※本篇在學習Brython的大致使用後，進行實際執行。">
+<meta name="keywords" content="group3_w2">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在瀏覽器中利用Brython執行Python">
 <meta property="og:url" content="https://s40523123.github.io/cd2018/2018/03/13/group3-W2/index.html">
 <meta property="og:site_name" content="2018CD_group3">
-<meta property="og:description" content="本篇在學習Brython的大致使用後，進行實際執行，以下為例：">
+<meta property="og:description" content="※本篇在學習Brython的大致使用後，進行實際執行。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-03-22T08:00:14.269Z">
+<meta property="og:updated_time" content="2018-03-24T08:12:23.932Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在瀏覽器中利用Brython執行Python">
-<meta name="twitter:description" content="本篇在學習Brython的大致使用後，進行實際執行，以下為例：">
+<meta name="twitter:description" content="※本篇在學習Brython的大致使用後，進行實際執行。">
 
 
 
@@ -330,43 +330,36 @@
       
 
       
-        <p>本篇在學習<a href="https://www.brython.info/static_doc/en/intro.html" target="_blank" rel="noopener">Brython</a>的大致使用後，進行實際執行，以下為例：</p>
-<a id="more"></a>
+        <p>※本篇在學習<a href="https://www.brython.info/static_doc/en/intro.html" target="_blank" rel="noopener">Brython</a>的大致使用後，進行實際執行。</p>
 <script type="text/javascript" src="https://cdn.rawgit.com/brython-dev/brython/3.4.0/www/src/brython.js"></script>
 
+<a id="more"></a>
+<p>這次將把前一篇文章的分組內容利用Brython作呈現，在這一一把步驟試著列出。<br>在此之前，說明若想要利用Bython，執行的方法：<br>1.載入腳本<a href="https://github.com/brython-dev/brython" target="_blank" rel="noopener">Brython.js</a>。<br>2.寫入 <code>brython()</code>。<br>3.寫入 <code>&lt;script type=”text/python”&gt;</code>。</p>
+<p>讓我們開始實際操作：<br>一、首先在加入套件及有關Brython的部分前，這是我們Python分組的程式(第二點開始簡寫成#content)：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">"2a raw.txt"</span>) <span class="keyword">as</span> fh:</span><br><span class="line">    rea = fh.readlines()</span><br><span class="line">    <span class="comment">#print (rea)</span></span><br><span class="line"></span><br><span class="line">no_list = <span class="keyword">lambda</span> list: int((sum([(len(list[i])) <span class="keyword">for</span> i <span class="keyword">in</span> range(len(list))]))/<span class="number">3</span>)</span><br><span class="line"><span class="comment">#簡寫一個for迴圈命名為no_list,目的為求出迴圈執行次數(14次)</span></span><br><span class="line"></span><br><span class="line">t = list()<span class="comment">#命名空清單t</span></span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> range(len(rea)):</span><br><span class="line">    a = rea[k]</span><br><span class="line">    b = a.split()<span class="comment">#分割每一行第k位</span></span><br><span class="line">    <span class="comment">#print(b)</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,len(b),<span class="number">3</span>):</span><br><span class="line">        c = b[i:i+<span class="number">3</span>]<span class="comment">#每三字串為一次進行迴圈</span></span><br><span class="line">        t.append(c)<span class="comment">#加入清單t</span></span><br><span class="line">        </span><br><span class="line"><span class="keyword">for</span> g <span class="keyword">in</span> range(no_list(t)):<span class="comment">#range = 14</span></span><br><span class="line">    print(<span class="string">"第"</span> + str(g+<span class="number">1</span>) + <span class="string">"組:"</span> + str(t[g]))</span><br></pre></td></tr></table></figure></p>
+<p>列出後，開始從<a href="https://www.brython.info/static_doc/en/intro.html" target="_blank" rel="noopener">Bython官方網站</a>中，一一找尋能達成我們目的的步驟，首先來到<a href="https://github.com/brython-dev/brython" target="_blank" rel="noopener">Brython下載倉儲</a>，第一步必須將Brython.js檔案載入程式中進行使用，利用內容中寫道的Zero install !部分，我們在上述程式碼的最上方寫入下列程式碼：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span></span><br><span class="line">    src=<span class="string">"https://cdn.rawgit.com/brython-dev/brython/3.4.0/www/src/brython.js"</span>&gt;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>完成第一步。</p>
+<p>二-(1)、為了在編輯中寫入函數<code>brython()</code>，需要建立<code>&lt;body&gt;</code>，程式碼寫法為：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;body onload=<span class="string">"brython()"</span>&gt;</span><br><span class="line">    <span class="comment">#content</span></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></p>
+<p>二-(2)、接著，還需要利用<code>&lt;div&gt;</code><a href="http://www.wibibi.com/info.php?tid=112" target="_blank" rel="noopener">區塊標籤</a>的功能，讓我們寫的Python程式內容包起來：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;body onload=<span class="string">"brython()"</span>&gt;</span><br><span class="line">    &lt;div id=<span class="string">"test"</span>&gt;</span><br><span class="line">    <span class="comment">#content</span></span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></p>
+<p>二-(3)、而文章一開始說明想利用Brython的第三點，必須在 <code>&lt;script type=”text/python”&gt;</code>中寫入Python代碼或將其連接，所以我們再加入一層<code>&lt;script&gt;</code>：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;body onload=<span class="string">"brython()"</span>&gt;</span><br><span class="line">    &lt;div id=<span class="string">"test"</span>&gt;</span><br><span class="line">        &lt;script type=<span class="string">"text/python"</span>&gt;</span><br><span class="line">        <span class="comment">#content</span></span><br><span class="line">        &lt;/script&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></p>
+<p>完成第二步，大致上的Brython載入使用都已經妥當，並繼續進行剩下步驟。</p>
+<p>三-(1)、接著我們要賦予它兩個按鈕，分別是執行程式及清除輸出內容。想要在網頁中生成按鈕，參照<a href="https://www.brython.info/static_doc/en/events.html" target="_blank" rel="noopener">Brython_Documentatoin_Events</a>，內容介紹使用按鈕的方法：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@btn.bind("click")</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show</span><span class="params">(ev)</span>:</span></span><br><span class="line">    print(<span class="string">'ok'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>在給予一個按鈕功能後，需寫入<code>&lt;button id=”test”&gt;test&lt;/button&gt;</code>將它生成。</p>
+<p>測試生成一個按鈕：</p>
+<p><button id="test">test</button></p>
 <body onload="brython()"><br>    <div id="one"><br>        <script type="text/python">
-            from browser import document, html
-            import time
+            @document["test"].bind("click")
+            def show(ev):
+                print('ok')
+        </script><br>    </div><br></body>
 
-            @document["mybutton"].bind("click")
-            def echo(ev):
-                fake_qs = '?foo=%s' %time.time()
-                with open("./../../../../2a.txt"+fake_qs) as fh:
-                    rea = fh.readlines()
-                    #print (rea)
-
-                no_list = lambda list: int((sum([(len(list[i])) for i in range(len(list))]))/3)
-                #簡寫一個for迴圈命名為no_list,目的為求出迴圈執行次數(14次)
-
-                t = list()#命名空清單t
-                for k in range(len(rea)):
-                    a = rea[k]
-                    b = a.split()#分割每一行第k位
-                    #print(b)
-                    for i in range(0,len(b),3):
-                        c = b[i:i+3]#每三字串為一次進行迴圈
-                        t.append(c)#加入清單t
-                        
-                for g in range(no_list(t)):#range = 14
-                    document["one"] <= ("第" + str(g+1) + "組:" + str(t[g])) + html.BR()
-            @document["mybutton2"].bind("click")
-            def delete(ev):
-                for row in document['one']:
-                    row.remove()
-</script><br></div><br><button id="mybutton">執行</button><button id="mybutton2">清除</button><br></body>
-
-
-<p>觀看執行程式碼：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&lt;body onload=<span class="string">"brython()"</span>&gt;</span><br><span class="line">    &lt;div id=<span class="string">"one"</span>&gt;</span><br><span class="line">        &lt;script type=<span class="string">"text/python"</span>&gt;&#123;% raw %&#125;</span><br><span class="line">            <span class="keyword">from</span> browser <span class="keyword">import</span> document, html</span><br><span class="line">            <span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="meta">            @document["mybutton"].bind("click")</span></span><br><span class="line">            <span class="function"><span class="keyword">def</span> <span class="title">echo</span><span class="params">(ev)</span>:</span></span><br><span class="line">                fake_qs = <span class="string">'?foo=%s'</span> %time.time()</span><br><span class="line">                <span class="keyword">with</span> open(<span class="string">"./../../../../2a.txt"</span>+fake_qs) <span class="keyword">as</span> fh:</span><br><span class="line">                    rea = fh.readlines()</span><br><span class="line">                    <span class="comment">#print (rea)</span></span><br><span class="line"></span><br><span class="line">                no_list = <span class="keyword">lambda</span> list: int((sum([(len(list[i])) <span class="keyword">for</span> i <span class="keyword">in</span> range(len(list))]))/<span class="number">3</span>)</span><br><span class="line">                <span class="comment">#簡寫一個for迴圈命名為no_list,目的為求出迴圈執行次數(14次)</span></span><br><span class="line"></span><br><span class="line">                t = list()<span class="comment">#命名空清單t</span></span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> range(len(rea)):</span><br><span class="line">                    a = rea[k]</span><br><span class="line">                    b = a.split()<span class="comment">#分割每一行第k位</span></span><br><span class="line">                    <span class="comment">#print(b)</span></span><br><span class="line">                    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,len(b),<span class="number">3</span>):</span><br><span class="line">                        c = b[i:i+<span class="number">3</span>]<span class="comment">#每三字串為一次進行迴圈</span></span><br><span class="line">                        t.append(c)<span class="comment">#加入清單t</span></span><br><span class="line">                        </span><br><span class="line">                <span class="keyword">for</span> g <span class="keyword">in</span> range(no_list(t)):<span class="comment">#range = 14</span></span><br><span class="line">                    document[<span class="string">"one"</span>] &lt;= (<span class="string">"第"</span> + str(g+<span class="number">1</span>) + <span class="string">"組:"</span> + str(t[g])) + html.BR()</span><br><span class="line"><span class="meta">            @document["mybutton2"].bind("click")</span></span><br><span class="line">            <span class="function"><span class="keyword">def</span> <span class="title">delete</span><span class="params">(ev)</span>:</span></span><br><span class="line">                <span class="keyword">for</span> row <span class="keyword">in</span> document[<span class="string">'one'</span>]:</span><br><span class="line">                    row.remove()</span><br><span class="line">&#123;% endraw %&#125;&lt;/script&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;button id="mybutton"&gt;執行&lt;/button&gt;&lt;button id="mybutton2"&gt;清除&lt;/button&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></p>
+<p>三-(2)、成功做出按鈕，試著放入我們要執行的程式中，直接用其將#content給上下包住(按鈕取名為but及but2)：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;body onload=<span class="string">"brython()"</span>&gt;</span><br><span class="line">    &lt;div id=<span class="string">"one"</span>&gt;</span><br><span class="line">        &lt;script type=<span class="string">"text/python"</span>&gt;&#123;% raw %&#125;</span><br><span class="line">            <span class="keyword">from</span> browser <span class="keyword">import</span> document, html</span><br><span class="line"></span><br><span class="line"><span class="meta">            @document["but1"].bind("click")</span></span><br><span class="line">            <span class="function"><span class="keyword">def</span> <span class="title">echo</span><span class="params">(ev)</span>:</span></span><br><span class="line">                <span class="comment">#content</span></span><br><span class="line"><span class="meta">            @document["but2"].bind("click")</span></span><br><span class="line">            <span class="function"><span class="keyword">def</span> <span class="title">delete</span><span class="params">(ev)</span>:</span></span><br><span class="line">                <span class="keyword">for</span> row <span class="keyword">in</span> document[<span class="string">'one'</span>]:</span><br><span class="line">                    row.remove()</span><br><span class="line">&#123;% endraw %&#125;&lt;/script&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;button id="but"&gt;執行&lt;/button&gt;&lt;button id="but2"&gt;清除&lt;/button&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></p>
+<p>※按鈕二為清除用途，以下將它分割出來提供讀者觀察：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@document["but2"].bind("click")</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">delete</span><span class="params">(ev)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> row <span class="keyword">in</span> document[<span class="string">'one'</span>]:</span><br><span class="line">            row.remove()</span><br></pre></td></tr></table></figure></p>
+<p>第三步按鈕的設置即完成。</p>
+<p>四、實際看向近端瀏覽器，我們發現按下按鈕後還是無法執行，這時的問題參考<a href="https://www.brython.info/static_doc/en/cookbook/read_file.html" target="_blank" rel="noopener">Brython documentation</a>文章，內容說明讀取檔案內容時會因為讀取時間而無法正常輸出，其解為利用函數<code>&lt;open()&gt;</code>將時間設置忽略(給予一個假(fake)的時間)，使用方法為：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fake_qs = <span class="string">'?foo=%s'</span> %time.time()</span><br></pre></td></tr></table></figure></p>
+<p>再來給予檔案名稱後方加上假的時間代碼：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'./../../../../data/2a.txt'</span>+fake_qs) <span class="keyword">as</span> fh:</span><br></pre></td></tr></table></figure></p>
+<p>接著需要利用import來輸入time以及document以利執行，寫法為：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> browser <span class="keyword">import</span> document</span><br></pre></td></tr></table></figure></p>
+<p>五、最後整理好經過加工的分組程式碼，就可以進行執行的測試，以下為最後的程式：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type="text/javascript" src="https://cdn.rawgit.com/brython-dev/brython/3.4.0/www/src/brython.js"&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;body onload=<span class="string">"brython()"</span>&gt;</span><br><span class="line">    &lt;div id=<span class="string">"one"</span>&gt;</span><br><span class="line">        &lt;script type=<span class="string">"text/python"</span>&gt;&#123;% raw %&#125;</span><br><span class="line">            <span class="keyword">from</span> browser <span class="keyword">import</span> document, html</span><br><span class="line">            <span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="meta">            @document["mybutton"].bind("click")</span></span><br><span class="line">            <span class="function"><span class="keyword">def</span> <span class="title">echo</span><span class="params">(ev)</span>:</span></span><br><span class="line">                fake_qs = <span class="string">'?foo=%s'</span> %time.time()</span><br><span class="line">                <span class="keyword">with</span> open(<span class="string">"./../../../../2a.txt"</span>+fake_qs) <span class="keyword">as</span> fh:</span><br><span class="line">                    rea = fh.readlines()</span><br><span class="line">                    <span class="comment">#print (rea)</span></span><br><span class="line"></span><br><span class="line">                no_list = <span class="keyword">lambda</span> list: int((sum([(len(list[i])) <span class="keyword">for</span> i <span class="keyword">in</span> range(len(list))]))/<span class="number">3</span>)</span><br><span class="line">                <span class="comment">#簡寫一個for迴圈命名為no_list,目的為求出迴圈執行次數(14次)</span></span><br><span class="line"></span><br><span class="line">                t = list()<span class="comment">#命名空清單t</span></span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> range(len(rea)):</span><br><span class="line">                    a = rea[k]</span><br><span class="line">                    b = a.split()<span class="comment">#分割每一行第k位</span></span><br><span class="line">                    <span class="comment">#print(b)</span></span><br><span class="line">                    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,len(b),<span class="number">3</span>):</span><br><span class="line">                        c = b[i:i+<span class="number">3</span>]<span class="comment">#每三字串為一次進行迴圈</span></span><br><span class="line">                        t.append(c)<span class="comment">#加入清單t</span></span><br><span class="line">                        </span><br><span class="line">                <span class="keyword">for</span> g <span class="keyword">in</span> range(no_list(t)):<span class="comment">#range = 14</span></span><br><span class="line">                    document[<span class="string">"one"</span>] &lt;= (<span class="string">"第"</span> + str(g+<span class="number">1</span>) + <span class="string">"組:"</span> + str(t[g])) + html.BR()</span><br><span class="line"><span class="meta">            @document["mybutton2"].bind("click")</span></span><br><span class="line">            <span class="function"><span class="keyword">def</span> <span class="title">delete</span><span class="params">(ev)</span>:</span></span><br><span class="line">                <span class="keyword">for</span> row <span class="keyword">in</span> document[<span class="string">'one'</span>]:</span><br><span class="line">                    row.remove()</span><br><span class="line">&#123;% endraw %&#125;&lt;/script&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;button id="mybutton"&gt;執行&lt;/button&gt;&lt;button id="mybutton2"&gt;清除&lt;/button&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></p>
+<p>是不是都學會了呢？</p>
 
       
     </div>
@@ -384,7 +377,7 @@
       
         <div class="post-tags">
           
-            <a href="/cd2018/tags/group3-w1/" rel="tag"># group3_w1</a>
+            <a href="/cd2018/tags/group3-w2/" rel="tag"># group3_w2</a>
           
         </div>
       
@@ -477,7 +470,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/cd2018/archives/">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -490,7 +483,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">tags</span>
               
             </div>

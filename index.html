@@ -260,6 +260,160 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://s40523123.github.io/cd2018/cd2018/2018/03/24/group3-W5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="cd_group3">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/cd2018/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="2018CD_group3">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/cd2018/2018/03/24/group3-W5/" itemprop="url">test</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-24T14:05:11+08:00">
+                2018-03-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <script type="text/javascript" src="https://cdn.rawgit.com/brython-dev/brython/3.4.0/www/src/brython.js"></script>
+
+<body onload="brython()"><br>    <div id="one"><br>        <script type="text/python">
+            from browser import document, html
+            import time
+
+            @document["mybutton"].bind("click")
+            def echo(ev):
+                fake_qs = '?foo=%s' %time.time()
+                with open("./../../../../2a.txt"+fake_qs) as fh:
+                    rea = fh.readlines()
+                    #print (rea)
+
+                no_list = lambda list: int((sum([(len(list[i])) for i in range(len(list))]))/3)
+                #簡寫一個for迴圈命名為no_list,目的為求出迴圈執行次數(14次)
+
+                t = list()#命名空清單t
+                for k in range(len(rea)):
+                    a = rea[k]
+                    b = a.split()#分割每一行第k位
+                    #print(b)
+                    for i in range(0,len(b),3):
+                        c = b[i:i+3]#每三字串為一次進行迴圈
+                        t.append(c)#加入清單t
+                        
+                for g in range(no_list(t)):#range = 14
+                    document["one"] <= ("第" + str(g+1) + "組:" + str(t[g])) + html.BR()
+            @document["mybutton2"].bind("click")
+            def delete(ev):
+                for row in document['one']:
+                    row.remove()
+</script><br>    </div><br><button id="mybutton">執行</button><button id="mybutton2">清除</button><br></body>
+
+
+<p>觀看執行程式碼：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&lt;body onload=<span class="string">"brython()"</span>&gt;</span><br><span class="line">    &lt;div id=<span class="string">"one"</span>&gt;</span><br><span class="line">        &lt;script type=<span class="string">"text/python"</span>&gt;&#123;% raw %&#125;</span><br><span class="line">            <span class="keyword">from</span> browser <span class="keyword">import</span> document, html</span><br><span class="line">            <span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="meta">            @document["mybutton"].bind("click")</span></span><br><span class="line">            <span class="function"><span class="keyword">def</span> <span class="title">echo</span><span class="params">(ev)</span>:</span></span><br><span class="line">                fake_qs = <span class="string">'?foo=%s'</span> %time.time()</span><br><span class="line">                <span class="keyword">with</span> open(<span class="string">"./../../../../2a.txt"</span>+fake_qs) <span class="keyword">as</span> fh:</span><br><span class="line">                    rea = fh.readlines()</span><br><span class="line">                    <span class="comment">#print (rea)</span></span><br><span class="line"></span><br><span class="line">                no_list = <span class="keyword">lambda</span> list: int((sum([(len(list[i])) <span class="keyword">for</span> i <span class="keyword">in</span> range(len(list))]))/<span class="number">3</span>)</span><br><span class="line">                <span class="comment">#簡寫一個for迴圈命名為no_list,目的為求出迴圈執行次數(14次)</span></span><br><span class="line"></span><br><span class="line">                t = list()<span class="comment">#命名空清單t</span></span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> range(len(rea)):</span><br><span class="line">                    a = rea[k]</span><br><span class="line">                    b = a.split()<span class="comment">#分割每一行第k位</span></span><br><span class="line">                    <span class="comment">#print(b)</span></span><br><span class="line">                    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,len(b),<span class="number">3</span>):</span><br><span class="line">                        c = b[i:i+<span class="number">3</span>]<span class="comment">#每三字串為一次進行迴圈</span></span><br><span class="line">                        t.append(c)<span class="comment">#加入清單t</span></span><br><span class="line">                        </span><br><span class="line">                <span class="keyword">for</span> g <span class="keyword">in</span> range(no_list(t)):<span class="comment">#range = 14</span></span><br><span class="line">                    document[<span class="string">"one"</span>] &lt;= (<span class="string">"第"</span> + str(g+<span class="number">1</span>) + <span class="string">"組:"</span> + str(t[g])) + html.BR()</span><br><span class="line"><span class="meta">            @document["mybutton2"].bind("click")</span></span><br><span class="line">            <span class="function"><span class="keyword">def</span> <span class="title">delete</span><span class="params">(ev)</span>:</span></span><br><span class="line">                <span class="keyword">for</span> row <span class="keyword">in</span> document[<span class="string">'one'</span>]:</span><br><span class="line">                    row.remove()</span><br><span class="line">&#123;% endraw %&#125;&lt;/script&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;button id="mybutton"&gt;執行&lt;/button&gt;&lt;button id="mybutton2"&gt;清除&lt;/button&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://s40523123.github.io/cd2018/cd2018/2018/03/22/group3-W4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -454,7 +608,8 @@
 
       
         
-          <p>本篇在學習<a href="https://www.brython.info/static_doc/en/intro.html" target="_blank" rel="noopener">Brython</a>的大致使用後，進行實際執行，以下為例：</p>
+          <p>※本篇在學習<a href="https://www.brython.info/static_doc/en/intro.html" target="_blank" rel="noopener">Brython</a>的大致使用後，進行實際執行。</p>
+<script type="text/javascript" src="https://cdn.rawgit.com/brython-dev/brython/3.4.0/www/src/brython.js"></script>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/cd2018/2018/03/13/group3-W2/#more" rel="contents">
@@ -665,7 +820,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/cd2018/archives/">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -678,7 +833,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">tags</span>
               
             </div>
